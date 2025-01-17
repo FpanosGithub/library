@@ -43,11 +43,12 @@ export const { POST } = serve<InitialData>(async (context) => {
 
   // Welcome Email
   await context.run("new-signup", async () => {
-    await sendEmail({
-      email,
-      subject: "Welcome to the platform",
-      message: `Welcome ${fullName}!`,
-    });
+    console.log("Sending welcome email");
+    //await sendEmail({
+    //  email,
+    //  subject: "Welcome to the platform",
+    //  message: `Welcome ${fullName}!`,
+    //});
   });
 
   await context.sleep("wait-for-3-days", 60 * 60 * 24 * 3);
